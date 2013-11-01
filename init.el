@@ -50,30 +50,31 @@
 
 (setq org-publish-project-alist
       '(
-  ("org-zerotonin"
-          ;; Path to your org files.
-          :base-directory "~/work/zeroton.in/org/"
-          :base-extension "org"
+	("org-zerotonin"
+	 ;; Path to your org files.
+	 :base-directory "~/work/zeroton.in/org/"
+	 :base-extension "org"
 
-          ;; Path to your Jekyll project.
-          :publishing-directory "~/work/zeroton.in/jekyll/"
-          :recursive t
-          :publishing-function org-publish-org-to-html
-          :headline-levels 4
-          :html-extension "html"
-          :body-only t ;; Only export section between <body> </body>
-    )
+	 ;; Path to your Jekyll project.
+	 :publishing-directory "~/work/zeroton.in/jekyll/"
+	 :recursive t
+	 :publishing-function org-publish-org-to-html
+	 :headline-levels 4
+	 :html-extension "html"
+	 :body-only t ;; Only export section between <body> </body>
+	 )
 
 
-    ("org-static-zerotonin"
-          :base-directory "~/work/zeroton.in/org/"
-          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-          :publishing-directory "~/work/zeroton.in/"
-          :recursive t
-          :publishing-function org-publish-attachment)
+	("org-static-zerotonin"
+	 :base-directory "~/work/zeroton.in/org/"
+	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+	 :publishing-directory "~/work/zeroton.in/"
+	 :recursive t
+	 :publishing-function org-publish-attachment)
 
-    ("zerotonin" :components ("org-zerotonin" "org-static-zerotonin"))))
+	("zerotonin" :components ("org-zerotonin" "org-static-zerotonin"))))
 
+(global-set-key (kbd "C-c e") 'org-publish-project)
 
 ;;
 ;; Clojure/paredit
