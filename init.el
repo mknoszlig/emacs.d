@@ -29,6 +29,13 @@
 
 
 ;;
+;; Whitespace mode
+;;
+(setq whitespace-style '(face tabs trailing))
+(global-set-key (kbd "C-c C-w") 'whitespace-mode)
+
+
+;;
 ;; Themes/General
 ;;
 
@@ -88,6 +95,7 @@
 (defun turn-on-paredit () (paredit-mode 1))
 (add-hook 'clojure-mode-hook 'turn-on-paredit)
 (add-hook 'clojure-mode-hook 'highlight-parentheses-mode)
+(add-hook 'clojure-mode-hook 'whitespace-mode)
 
 ;; clojure-mode indent for peripheral components
 (put 'defcomponent 'clojure-backtracking-indent '(4 4 (2)))
