@@ -39,10 +39,31 @@
 ;; Themes/General
 ;;
 
-(load-theme 'underwater t)
+(load-theme 'wombat t)
 
 (column-number-mode)
 
+;;
+;; Helm/Helm-ag
+;;
+
+(global-set-key (kbd "M-x") 'helm-M-x)
+(helm-mode)
+
+
+;;
+;; Linum
+;;
+
+(setq linum-format "%4d \u2502 ")
+(global-set-key (kbd "C-C C-l") 'linum-mode)
+(add-hook 'php-mode-hook 'linum-mode)
+
+;;
+;; Neotree
+;;
+
+(global-set-key [f8] 'neotree-toggle)
 
 ;;
 ;; Org Mode
@@ -87,6 +108,7 @@
 	("zerotonin" :components ("org-zerotonin" "org-static-zerotonin"))))
 
 (global-set-key (kbd "C-c e") 'org-publish-project)
+
 
 ;;
 ;; Clojure/paredit
